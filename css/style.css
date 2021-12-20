@@ -38,7 +38,6 @@
 
 /* General styles */
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -182,7 +181,7 @@ header {
 
 .nav-toggle {
     padding: .5em;
-    background: transparent);
+    background: transparent;
     border: 0;
     cursor: pointer;
     position: absolute;
@@ -199,12 +198,19 @@ header {
     position: fixed;
 }
 
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
 .hamburger {
-    background: var(--clr-accent);
-    color: var(--clr-dark);
-    width: 2em;
-    height: 3px;
-    border-radius: 1em;
     display: block;
     position: relative;
 }
@@ -212,9 +218,9 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-light);
+    background: var(--clr-accent);
     width: 2em;
-    height: 6px;
+    height: 3px;
     border-radius: 1em;
     transition: transform 250ms ease-in-out;
 }
